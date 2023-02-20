@@ -6,6 +6,7 @@ import {
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
+
 import {
   AppBar,
   Button,
@@ -21,11 +22,25 @@ import {
 import { useDispatch } from "react-redux";
 import { setMode } from "src/features/theme/themeSlice";
 
-const index = () => {
+// interface
+import { navbarInterface } from "src/model/navbar/interface";
+
+const index: React.FC<navbarInterface> = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
+}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
+
   return (
-    <AppBar sx={{ position: "static", background: "none", boxShadow: "none" }}>
+    <AppBar
+      sx={{
+        position: "static",
+        background: "none",
+        boxShadow: "none",
+        width: "100%",
+      }}
+    >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Box display="flex" alignItems="center" justifyContent="space-between">
           <IconButton>
@@ -39,7 +54,7 @@ const index = () => {
             borderRadius="9px"
             gap="3rem"
             padding="0.1rem 1.5rem"
-            backgroundColor={theme.palette.background.alt}
+            sx={{ background: theme.palette.background.paper }}
           >
             <InputBase placeholder="Search..." />
             <IconButton>

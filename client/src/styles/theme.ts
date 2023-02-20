@@ -89,7 +89,7 @@ export const themeSettings = (mode: "dark" | "light") => {
             },
             background: {
               default: darkTheme.primary[600],
-              alt: darkTheme.primary[500],
+              paper: darkTheme.primary[500],
             },
           }
         : {
@@ -110,7 +110,7 @@ export const themeSettings = (mode: "dark" | "light") => {
             },
             background: {
               default: darkTheme.grey[0],
-              alt: darkTheme.grey[50],
+              paper: darkTheme.grey[50],
             },
           }),
     },
